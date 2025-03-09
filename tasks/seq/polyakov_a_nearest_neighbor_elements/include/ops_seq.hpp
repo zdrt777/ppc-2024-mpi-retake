@@ -17,9 +17,7 @@ class NearestNeighborElementsSeq : public ppc::core::Task {
 
  private:
   std::vector<int> input_, output_;
-  int size_{};
+  size_t size_{};
 };
-
-void test(std::vector<int>&, std::vector<int>&);
 
 }  // namespace polyakov_a_nearest_neighbor_elements_seq

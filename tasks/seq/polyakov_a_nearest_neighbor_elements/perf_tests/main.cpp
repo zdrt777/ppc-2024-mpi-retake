@@ -7,6 +7,7 @@
 #include <random>
 #include <vector>
 
+#include "core/task/include/task.hpp"
 #include "core/perf/include/perf.hpp"
 #include "seq/polyakov_a_nearest_neighbor_elements/include/ops_seq.hpp"
 
