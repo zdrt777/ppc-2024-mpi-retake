@@ -5,6 +5,7 @@
 #include <limits>
 #include <vector>
 
+
 bool polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq::ValidationImpl() {
   return !task_data->inputs_count.empty() && task_data->outputs_count[0] == 2 && task_data->inputs_count[0] > 1;
 }
@@ -25,7 +26,7 @@ bool polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq::PrePr
 bool polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq::RunImpl() {
   int min = std::numeric_limits<int>::max();
   int tmp{};
-  int ind{};
+  size_t ind{};
 
   for (size_t i = 0; i < size_ - 1; i++) {
     tmp = std::abs(input_[i + 1] - input_[i]);

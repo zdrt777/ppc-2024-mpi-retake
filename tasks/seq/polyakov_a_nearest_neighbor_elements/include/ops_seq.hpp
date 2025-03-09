@@ -1,10 +1,11 @@
 #pragma once
 
-#include <utility>
 #include <cstddef>
+#include <utility>
 #include <vector>
 
 #include "core/task/include/task.hpp"
+
 
 namespace polyakov_a_nearest_neighbor_elements_seq {
 
