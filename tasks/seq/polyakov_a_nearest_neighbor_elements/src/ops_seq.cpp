@@ -5,7 +5,6 @@
 #include <limits>
 #include <vector>
 
-
 bool polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq::ValidationImpl() {
   return !task_data->inputs_count.empty() && task_data->outputs_count[0] == 2 && task_data->inputs_count[0] > 1;
 }

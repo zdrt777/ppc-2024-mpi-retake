@@ -6,7 +6,6 @@
 
 #include "core/task/include/task.hpp"
 
-
 namespace polyakov_a_nearest_neighbor_elements_seq {
 
 class NearestNeighborElementsSeq : public ppc::core::Task {
