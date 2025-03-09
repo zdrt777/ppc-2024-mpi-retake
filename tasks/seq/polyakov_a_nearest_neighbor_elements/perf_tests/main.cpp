@@ -4,8 +4,8 @@
 #include <cstddef>
 #include <cstdint>
 #include <memory>
-#include <vector>
 #include <random>
+#include <vector>
 
 #include "core/perf/include/perf.hpp"
 #include "seq/polyakov_a_nearest_neighbor_elements/include/ops_seq.hpp"
@@ -19,7 +19,7 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_pipeline_run) {
   std::random_device rd;
   std::mt19937 gen(rd());
   std::uniform_int_distribution<int> dist(-10000000, 10000000);
-  for (auto& i : in) {
+  for (auto &i : in) {
     i = dist(gen);
   }
 
@@ -31,7 +31,8 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_pipeline_run) {
   task_data_seq->outputs_count.emplace_back(out.size());
 
   // Create Task
-  auto test_task_sequential = std::make_shared<polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq>(task_data_seq);
+  auto test_task_sequential =
+      std::make_shared<polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq>(task_data_seq);
 
   // Create Perf attributes
   auto perf_attr = std::make_shared<ppc::core::PerfAttr>();
@@ -75,7 +76,8 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_task_run) {
   task_data_seq->outputs_count.emplace_back(out.size());
 
   // Create Task
-  auto test_task_sequential = std::make_shared<polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq>(task_data_seq);
+  auto test_task_sequential =
+      std::make_shared<polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq>(task_data_seq);
 
   // Create Perf attributes
   auto perf_attr = std::make_shared<ppc::core::PerfAttr>();
@@ -94,6 +96,6 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_task_run) {
   auto perf_analyzer = std::make_shared<ppc::core::Perf>(test_task_sequential);
   perf_analyzer->TaskRun(perf_attr, perf_results);
   ppc::core::Perf::PrintPerfStatistic(perf_results);
-  
+
   ASSERT_EQ(out.size(), static_cast<size_t>(2));
 }

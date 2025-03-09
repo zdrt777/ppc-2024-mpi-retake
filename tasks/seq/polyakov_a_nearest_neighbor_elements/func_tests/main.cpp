@@ -10,9 +10,7 @@
 #include "core/task/include/task.hpp"
 #include "seq/polyakov_a_nearest_neighbor_elements/include/ops_seq.hpp"
 
-
 TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_one) {
-  
   std::vector<int> in;
   std::vector<int> out(2, 0);
 
@@ -27,7 +25,6 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_one) {
 }
 
 TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_two) {
-  
   std::vector<int> in;
   std::vector<int> out(2, 0);
 
@@ -42,7 +39,6 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_two) {
 }
 
 TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_three) {
-
   std::vector<int> in(1, 0);
   std::vector<int> out(2, 0);
 
@@ -57,7 +53,6 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_three) {
 }
 
 TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_four) {
-
   std::vector<int> in(2, 0);
   std::vector<int> out(1, 0);
 
@@ -71,14 +66,12 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_validation_four) {
   ASSERT_FALSE(test_task_sequential.ValidationImpl());
 }
 
-TEST(polyakov_a_nearest_neighbor_elements_seq, test_two_elements) { 
-
+TEST(polyakov_a_nearest_neighbor_elements_seq, test_two_elements) {
   std::vector<int> in = {1, 2};
-  
+
   std::vector<int> out(2, 0);
 
   std::vector<int> res = {1, 2};
-
 
   auto task_data_seq = std::make_shared<ppc::core::TaskData>();
   task_data_seq->inputs.emplace_back(reinterpret_cast<uint8_t *>(in.data()));
@@ -97,7 +90,7 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_two_elements) {
   EXPECT_EQ(res[1], out[1]);
 }
 
-TEST(polyakov_a_nearest_neighbor_elements_seq, test_ascending_order) { 
+TEST(polyakov_a_nearest_neighbor_elements_seq, test_ascending_order) {
   std::vector<int> in = {-21, -16, -10, -5, -1, 2, 4, 1000};
 
   std::vector<int> out(2, 0);
@@ -121,7 +114,7 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_ascending_order) {
   EXPECT_EQ(res[1], out[1]);
 }
 
-TEST(polyakov_a_nearest_neighbor_elements_seq, test_descending_order) { 
+TEST(polyakov_a_nearest_neighbor_elements_seq, test_descending_order) {
   std::vector<int> in = {100, 50, 30, 20, 0, -5, -10, -14, -20, -30};
 
   std::vector<int> out(2, 0);
@@ -169,7 +162,7 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_end_array) {
   EXPECT_EQ(res[1], out[1]);
 }
 
-TEST(polyakov_a_nearest_neighbor_elements_seq, test_beginning_of_array) { 
+TEST(polyakov_a_nearest_neighbor_elements_seq, test_beginning_of_array) {
   std::vector<int> in = {1, 0, 3, -3, 6, -6, 100, 1000};
 
   std::vector<int> out(2, 0);
@@ -190,7 +183,7 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_beginning_of_array) {
   test_task_sequential.PostProcessingImpl();
 
   EXPECT_EQ(res[0], out[0]);
-  EXPECT_EQ(res[1], out[1]); 
+  EXPECT_EQ(res[1], out[1]);
 }
 
 TEST(polyakov_a_nearest_neighbor_elements_seq, test_two_equals_elements) {
@@ -214,7 +207,7 @@ TEST(polyakov_a_nearest_neighbor_elements_seq, test_two_equals_elements) {
   test_task_sequential.PostProcessingImpl();
 
   EXPECT_EQ(res[0], out[0]);
-  EXPECT_EQ(res[1], out[1]); 
+  EXPECT_EQ(res[1], out[1]);
 }
 
 TEST(polyakov_a_nearest_neighbor_elements_seq, test_equals_elements) {
