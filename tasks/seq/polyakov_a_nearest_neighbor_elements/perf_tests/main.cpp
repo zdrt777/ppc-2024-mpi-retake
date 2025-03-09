@@ -7,8 +7,8 @@
 #include <random>
 #include <vector>
 
-#include "core/task/include/task.hpp"
 #include "core/perf/include/perf.hpp"
+#include "core/task/include/task.hpp"
 #include "seq/polyakov_a_nearest_neighbor_elements/include/ops_seq.hpp"
 
 TEST(polyakov_a_nearest_neighbor_elements_seq, test_pipeline_run) {

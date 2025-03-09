@@ -27,7 +27,7 @@ bool polyakov_a_nearest_neighbor_elements_seq::NearestNeighborElementsSeq::RunIm
   int tmp{};
   int ind{};
 
-  for (int i = 0; i < size_ - 1; i++) {
+  for (size_t i = 0; i < size_ - 1; i++) {
     tmp = std::abs(input_[i + 1] - input_[i]);
     if (tmp < min) {
       min = tmp;
